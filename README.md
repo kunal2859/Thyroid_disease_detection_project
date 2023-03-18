@@ -1,0 +1,1 @@
+# Thyroid_disease_detection_project
