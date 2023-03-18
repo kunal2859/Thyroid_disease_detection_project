@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thyroid Detection</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+  <nav class = "navbar navbar-light"  style="background-color:#e3f2fd;">
+    <div class = "container" align = 'right'>
+      <h2 class="title" align="right">Thyroid Disease Prediction</h2>
+    </div>
+  </nav>
+  {% block body %}
+  <section class="testimonials text-center">
+    		<div class="container-fluid">
+			<h4 class="my-4 title">Prediction</h4>
+			<div class="row">
+					<br/>
+                  <form action="/predict" method="post" class="row">
+                    <div class="form-row">
+                      <div class="form-group col-md-3">
+                      <label for="age">Age</label>
+                      <input type="text" class="form-control" name="age" placeholder="Eg: 30-150">
+                        </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="pregnant">Pregnant or not</label>
+                      <select class="form-control" name="pregnant">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="sex">Sex</label>
+                      <select class="form-control" name="sex">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="on_thyroxine">on thyroxine</label>
+                      <select  class="form-control" name="on_thyroxine">
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                  </div>
+                      <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label for="query_on_thyroxine">query on thyroxine</label>
+                      <select  class="form-control" name="query_on_thyroxine">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="on_antithyroid_medication">on Antithyroid Medication</label>
+                      <select  class="form-control" name="on_antithyroid_medication">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="thyroid_surgery">thyroid surgery</label>
+                      <select  class="form-control" name="thyroid_surgery">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+             <div class = "form-group col-md-3">
+                      <label for="I131">I131</label>
+                      <select  class="form-control" name="I131">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+             </div>
+                      </div>
+                    <div class="form-row">
+                        <div class = "form-group col-md-3">
+                      <label for="query_hypothyroid">query hypothyroid</label>
+                      <select  class="form-control" name="query_hypothyroid">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="query_hyperthyroid">Query Hyperthyroid</label>
+                      <select  class="form-control" name="query_hyperthyroid">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="lithium">Lithium</label>
+                      <select  class="form-control" name="lithium">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="goitre">Goitre</label>
+                      <select  class="form-control" name="goitre">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="form-row">
+                        <div class = "form-group col-md-3">
+                      <label for="hypopituitary">Hypopituitary</label>
+                      <select  class="form-control" name="hypopituitary">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="psych">Psych</label>
+                      <select  class="form-control" name="psych">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="TSH">TSH </label>
+                      <select  class="form-control" name="TSH">
+                        <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                      </select>
+                    </div>
+                  <div class="form-group col-md-3">
+                    <label class="lb-lg">TSH_measured</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="TSH_measured"
+                      placeholder="T3 measured eg. 3.6"
+                    />
+                  </div>
+                    </div>
+
+                      <div class="form-row">
+                            <div class = "form-group col-md-3">
+                              <label for="tt4">TT4 </label>
+                              <select  class="form-control" name="tt4">
+                                <option disabled selected>Select from available option</option>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                              </select>
+
+                            </div>
+                              <div class="form-group col-md-3">
+                                <label class="lb-lg">TT4 measured</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="TT4_measured"
+                                  placeholder="TT4 measured eg. 1.23"
+                                />
+                              </div>
+
+                          <div class = "form-group col-md-3">
+                              <label for="T4U">T4U </label>
+                              <select  class="form-control" name="T4U">
+                                <option disabled selected>Select from available option</option>
+                                <option value="1">True</option>
+                                <option value="0">False</option>
+                              </select>
+                          </div>
+                      <div class="form-group col-md-3">
+                        <label class="lb-lg">T4U measured</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="T4U_measured"
+                          placeholder="T4U measured eg. 3.44"
+                        />
+                      </div>
+                      <div class = "form-group col-md-3">
+                              <label for="FTI">FTI </label>
+                              <select  class="form-control" name="FTI">
+                                <option disabled selected>Select from available option</option>
+                                <option value="1">True</option>
+                                <option value="0">False</option>
+                              </select>
+                      </div>
+
+                      <div class="form-group col-md-3">
+                        <label class="lb-lg">FTI measured</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="FTI_measured"
+                          placeholder="FTI measured eg. 1.22"
+                        />
+                      </div>
+                      </div>
+              <div class="text-center mb-5 pb-4">
+                <input type="submit" class="my-cta-button" value="Predict" />
+              </div>
+
+                  </form>
+            </div>
+            </div>
+
+  </section>
+
+  {% endblock %}
+  	<!-- Footer -->
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 h-100 text-center my-auto mx-auto">
+					<ul class="list-inline mb-1">
+						<li class="list-inline-item"><a href="#">About</a></li>
+						<li class="list-inline-item">&sdot;</li>
+						<li class="list-inline-item"><a href="https://www.linkedin.com/in/prachibindal/">Contact</a></li>
+						<li class="list-inline-item">&sdot;</li>
+<!--						<li class="list-inline-item"><a href="https://ineuron.ai/privacy.html">Privacy Policy</a></li>-->
+					</ul>
+					<p class="text-muted small mb-2 mb-lg-0">&copy;All Rights Reserved.2023</p>
+				</div>
+
+		</div>
+        </div>
+	</footer>
+  </body>
+</html>

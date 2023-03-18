@@ -1,0 +1,10 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [18/Mar/2023 13:46:54] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+DEBUG:root:inputs taken
+INFO:werkzeug:127.0.0.1 - - [18/Mar/2023 16:30:27] "[37mPOST /predict HTTP/1.1[0m" 200 -
+DEBUG:root:inputs taken
+INFO:werkzeug:127.0.0.1 - - [18/Mar/2023 16:32:25] "[37mPOST /predict HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [18/Mar/2023 16:32:35] "[37mGET / HTTP/1.1[0m" 200 -
+DEBUG:root:inputs taken
+INFO:werkzeug:127.0.0.1 - - [18/Mar/2023 16:34:13] "[37mPOST /predict HTTP/1.1[0m" 200 -
