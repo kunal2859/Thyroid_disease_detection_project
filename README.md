@@ -29,10 +29,8 @@ https://youtu.be/PhGftPyB5g0
 In case, if you would like to connect with me:
 
 # Social Links
-Linkedin Link - https://www.linkedin.com/in/prachibindal/
+Linkedin Link - https://www.linkedin.com/in/kunal-aggarwal-220a55213
 
-Github Link - https://github.com/Prachi0203/
-
-Instagram Link - https://www.instagram.com/prachibindal_/
+Github Link - githubkunal.com
 
 Medium Link - https://medium.com/@prachibindal2925
